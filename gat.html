@@ -13,6 +13,7 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
         <!--Initialising css folders-->
+        <link rel="stylesheet" type="text/css" href="typed.css">
         <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/materialize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
@@ -35,6 +36,7 @@
     		<link rel="stylesheet" type="text/css" href="default.css" />
     		<link rel="stylesheet" type="text/css" href="timeline.css" />
     		<script src="js/modernizr.custom.js"></script>
+			<script src="js/smooth.js"></script>
 
         <!-- Compiled and minified CSS -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
@@ -42,18 +44,13 @@
          <!-- Compiled and minified JavaScript -->
          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
-         <script>
 
-
-             $(document).ready(function () {
-                 $('.modal-trigger').leanModal({
-                     ready: function () {
-                         var map = document.getElementById("googleMap");
-                         google.maps.event.trigger(map, 'resize');
-                     }
-                 });
-             });
-         </script>
+		 <!-- Carousel-->
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+     <style>
+     .mySlides {display:none;}
+     </style>
 
 
 
@@ -65,7 +62,7 @@
       <nav style="height:70px" class="blue-grey darken-4 lighten-1 z-depth-1">
       <div class="nav-wrapper">
         <div class="row">
-        <img class="col s1" src="" style="margin-left: 20; margin-top:10; height: 70px; width: 110px; border-radius: 50%" >
+        <img class="col s1" src="images/taglogo.png" style="margin-left: 20; margin-top:10; height: 70px; width: 180px; border-radius: 50%" >
 
         <ul id="nav-mobile" style="margin-right:30px" class="right hide-on-med-and-down">
           <li><a id="Aboutpointer" href="#About">ABOUT</a></li>
@@ -78,27 +75,36 @@
     </nav>
   </div>
 
+  <!--Fixed button-->
+    <div class="fixed-action-btn" style="bottom: 14px;">
+      <a class="btn-floating btn-large" style="background-color: black;">
+        <i class="large material-icons">settings</i>
+      </a>
+      <ul>
+        <li>
+          <a href="https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.1537493,17z/data=!3m1!4b1!4m5!3m4!1s0x3bad479f0ccbe067:0xfef222e5f36ecdeb!8m2!3d12.969264!4d79.155938" target="_blank" data-position="left" class="modal-trigger blue z-depth-1 waves-effect waves-light tooltipped btn-floating" data-tooltip="Location">
+                                   <i class="black material-icons">location_on</i>
+                                   </a>
 
-<!--About-->
-<section id="About">
-<!--	<div style="padding:1%;background-color:white;height:700" class="z-depth-1">
-		<div class="container center">
-			<br><br>
-			<h1 class="header center"><span style="color:black">ABOUT US</span></h1>
-			<div class="row">
-			 <div class="col s12" style="padding-top:4%">
-				 <p style="color:black" align="left">
-An event held annually till now during the college's technical fest, <b>graVITas</b>,
-in September has grown in staturein the past five years to become one of the biggest e-sports
-tournament at college level all over India.<br><br>
-				 </p>
+        </li>
+        <li><a class="btn-floating blue tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Edit Password" href="#editpwd"><i class="large material-icons">security</i></a></li>
+        <li><a class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Edit Profile" href="#editprofile"><i class="large material-icons">person</i></a></li>
+      </ul>
+    </div>
 
-			 </div>
-			</div>
-		</div> -->
+    <div class="col s12">
+      <div class="typewriter" style="background-image: url(images/bck.jpg)">
+        <div class="img">
+        <pre>                                    <img id="gatimg" SRC="images/GAT_logo.png"></pre>
+        </div>
+        <br>
+        <h6>WHERE GAMING BECOMES RELIGION!</h6>
+     </div>
+   </div>
+   <!--
     <div class="card">
       <div class="card-image">
-        <img src="file:///C:/Users/LENOVO/Desktop/AthuOfficial/TAG/TAG%20-%20LOGOS/TAG%20LOGO%20FINAL.png" class="hoverZoomLink">
+        <img src="./logo.png" class="hoverZoomLink">
       </div>
       <div class="right-content">
         <span class="card-title">About Us</span>
@@ -132,34 +138,8 @@ tournament at college level all over India.<br><br>
     }
     </style>
 	</div>
-</section>
+</section> -->
 
-<!--<div style="height: px" class="slider">
-  <ul class="slides">
-    <li>
-      <img src="nfs.jpg"> <!-- random image -->
-    <!--  <div class="caption center-align">
-        <h3>This is our big Tagline!</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-      </div>
-    </li>
-    <li>
-      <img src="nav-bar gat.png"> <!-- random image -->
-    <!--  <div class="caption left-align">
-        <h3>Left Aligned Caption</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-      </div>
-    </li>
-    <li>
-      <img src="page gat.png"> <!-- random image -->
-    <!--  <div class="caption right-align">
-        <h3>Right Aligned Caption</h3>
-        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-      </div>
-    </li>
-
-  </ul>
-</div> -->
 
 <div class="container">
   <header class="clearfix">
@@ -206,10 +186,37 @@ tournament at college level all over India.<br><br>
   </div>
 </div>
 
+<div class="w3-content w3-section" style="max-width:1350px">
+  <img class="mySlides" src="images/Fifa.jpg" style="width:100%; height:570px">
+  <img class="mySlides" src="images/Dota 2.jpg" style="width:100%; height:570px">
+  <img class="mySlides" src="images/CS GO.jpg" style="width:100%; height:570px">
+  <img class="mySlides" src="images/nfs .jpg" style="width:100%; height:570px">
+  <img class="mySlides" src="images/COD.jpg" style="width:100%; height:570px">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+
+
 <!-- Begin contact section -->
-<section id="Contact" style="background-color:#FFC107;">
+<section id="Contact" class="white-text" style="background-image: url('images/location 100.jpg');">
    <!-- Begin page header-->
       <div class="page-header-wrapper">
+      <br>
            <div class="container">
                  <h1 class="header center"><span>CONTACTS</span></h1>
            </div>
@@ -223,22 +230,7 @@ tournament at college level all over India.<br><br>
                  <div class="contact-info">
                      <h4>Our Address</h4>
                      <ul class="contact-address">
-                         <li>
-                           <a href="#mapmodel" class="modal-trigger blue z-depth-1 waves-effect waves-light btn-floating">
-                               <i class="black material-icons">location_on</i>
-                               </a>
-
-                 <div id="mapmodel" class="modal modal-fixed-footer">
-                     <div class="modal-content">
-                          <h4>Location</h4>
-                          <div style="width:500px;height:380px;">
-                             <iframe src="https://www.google.com/maps/d/embed?mid=1mur3OBbdG2VL-UPGOTV-j2vO6JE&hl=en_US" width="500px" height="380px"></iframe>
-                          </div>
-                    </div>
-                    <div class="modal-footer">
-                         <a href="#" class="red modal-action modal-close waves-effect btn-flat">Got it</a>
-                    </div>
-                </div>
+                         <li> <i class="material-icons">location_on</i>
                            &nbsp;Technology and Gaming Club,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VIT University,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vellore, TN, 632014<br></li>
                          <li><i class="material-icons prefix">phone</i>&nbsp; +91 - 9944411446<br></li>
                          <li><i class="material-icons prefix">email</i> tagclub.vitu@gmail.com</li>
@@ -250,21 +242,21 @@ tournament at college level all over India.<br><br>
            <div class="col s6">
                                <div class="contact-form">
                                    <h4>Write to us</h4>
-                                   <form role="form">
+                                   <form action="https://formspree.io/tagclub.vitu@gmail.com" method="POST">
                                        <div class="form-group">
-                                           <input type="text" class="form-control input-lg" placeholder="Your Name" required>
+                                           <input type="text" class="form-control input-lg" name="name" placeholder="Your Name" required>
                                        </div>
                                        <div class="form-group">
-                                           <input type="email" class="form-control input-lg" placeholder="E-mail" required>
+                                           <input type="email" class="form-control input-lg" name="email" placeholder="E-mail" required>
                                        </div>
                                        <div class="form-group">
-                                           <input type="text" class="form-control input-lg" placeholder="Subject" required>
+                                           <input type="text" class="form-control input-lg" name="subject" placeholder="Subject" required>
                                        </div>
                                        <div class="form-group">
-                                           <textarea class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
+                                           <textarea class="form-control input-lg" rows="5" name="message" placeholder="Message" required></textarea>
                                        </div>
                                        <br>
-                                       <button id="btn" type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
+                                       <button style="background-color: black;" type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
                                    </form>
                                </div>
                            </div>
