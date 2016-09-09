@@ -11,21 +11,12 @@
 .typewriter {
   color: #fff;
   font-family: monospace;
-<<<<<<< HEAD
-  padding-top: 0.3em;
-  justify-content: center;
-  width: 100%;
-  width: 100vw;
-  height: 582px;
-  /*height: 55vw;*/
-=======
   padding-top: 2em;
   justify-content: center;
   width: 100%;
   width: 100vw;
   height: 55%;
   height: 55vw;
->>>>>>> origin/master
 }
 
 /* DEMO-SPECIFIC STYLES */
@@ -41,11 +32,7 @@
     font-size: 50px;
   text-align: center;
   font-family: Roboto:400,700,500;
-<<<<<<< HEAD
-  }
-=======
 }
->>>>>>> origin/master
 
 /* The typing effect */
 @keyframes typing {
