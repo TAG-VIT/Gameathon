@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" style="background-color:#212121;">
     <head>
 
         <meta charset="utf-8">
@@ -68,10 +68,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" media="screen" href="style.css">
 
+<style>
+.align{
+text-align: center;
+font-size: 40px;
+
+}
+.aalign{
+
+
+}
+
+</style>
 </head>
 
 <body>
-<style>
+<!--<style>
 .w3-myfont {
   font-family: "roboto", cursive, sans-serif;
 }</style>
@@ -107,9 +119,17 @@
       </ul>
     </div>
 
-    <div id="particles-js"><canvas class="particles-js-canvas-el" width="360" height="640" style="width: 100%; height: 100%;"></canvas></div>
 
-    <!-- scripts -->
+<div>
+
+  <div id="particles-js" style="background-color:#212121;">
+<canvas class="particles-js-canvas-el" width="360" height="640" style="width: 100%; height: 100%;"></canvas>
+<div class="align">
+<p><span class="element align"></span></p>
+</div>
+</div>
+
+  <!-- scripts -->
     <script src="js/particles.js"></script>
     <script src="js/app.js"></script>
 
@@ -135,26 +155,10 @@
       requestAnimationFrame(update);
     </script>
 
-    <section style="background-image: url(images/bck.jpg)">
-      <br><br>
-      <img src="images/GAT_Logo.png">
-      <div style="text-align: center;" class="element"></div>
-      <script>
-      $(function(){
-          $(".element").typed({
-            strings: ["WHERE GAMING BECOMES RELIGION", "FIFA 16.", "DOTA 2.", "COD 4.", "CS:GO.", "NFS MW"],
-            typeSpeed: 0,
-            backDelay: 1000,
-            loop:true
-          });
-      });
-      </script>
-      <br><br><br><br>
-      <br><br>
-    </section>
+</div>
 
 
-<div class="container">
+<div class="container" >
   <header class="clearfix">
   </header>
   <div class="main">
@@ -200,12 +204,12 @@
 </div>
 
 
-<div class="w3-content w3-section hoverable" style="max-width:1350px">
-  <img class="mySlides" src="images/Fifa.jpg" style="width:100%; height:45%">
-  <img class="mySlides" src="images/Dota 2.jpg" style="width:100%; height:45%">
-  <img class="mySlides" src="images/CS GO.jpg" style="width:100%; height:45%">
-  <img class="mySlides" src="images/nfs .jpg" style="width:100%; height:45%">
-  <img class="mySlides" src="images/COD.jpg" style="width:100%; height:45%">
+<div id="rs" class="w3-content w3-section hoverable" style="max-width:90%">
+  <img class="mySlides" src="images/fifa.jpg" style="width:100%;">
+  <img class="mySlides" src="images/dota.jpg" style="width:100%;">
+  <img class="mySlides" src="images/csgo.jpg" style="width:100%;">
+  <img class="mySlides" src="images/nfs.jpg" style="width:100%;">
+  <img class="mySlides" src="images/cod.jpg" style="width:100%;">
 </div>
 
 <script>
@@ -221,11 +225,11 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}
     x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 3000); // Change image every 2 seconds
+    setTimeout(carousel, 3500); // Change image every 2 seconds
 }
 </script>
 
-<ul class="collapsible popout" data-collapsible="expandable">
+<ul class="collapsible popout" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">FIFA 16</div>
       <div class="collapsible-body"><p>tscydvuftbygunh</p></div>
@@ -383,6 +387,18 @@ function carousel() {
         <script src="inc/jquery.easing.min.js"></script>
         <script src="inc/jquery.counterup.min.js"></script>
         <script src="inc/smoothscroll.js"></script>
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/typed.js"></script>
+        <script>
+          $(function(){
+              $(".element").typed({
+                strings: ["WHERE GAMING BECOMES RELIGION", "FIFA 16.", "DOTA 2.", "COD 4.", "CS:GO.", "NFS MW","23RD-25TH SEPTEMBER 2016"],
+                typeSpeed: 0,
+                backDelay: 1000,
+                loop:true
+              });
+          });
+        </script>
 
         <!-- Theme JS -->
         <script src="js/theme.js"></script>
