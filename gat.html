@@ -6,6 +6,11 @@
         <title>Game-A-Thon</title>
         <meta name="description" content="Game-A-Thon By TAG Club">
 
+        <!--Other files-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--      <link rel="stylesheet" href="css/style1.css"> -->
+  <!--      <link rel="stylesheet" href="css/mobile.css"> -->
+
         <!-- Mobile Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Google Fonts  -->
@@ -39,11 +44,15 @@
     		<script src="js/modernizr.custom.js"></script>
 			<script src="js/smooth.js"></script>
 
-        <!-- Compiled and minified CSS -->
-    <!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
-         <!-- Compiled and minified JavaScript -->
-    <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> -->
+         <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 		 <!-- Carousel-->
      <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,17 +81,72 @@
 .align{
 text-align: center;
 font-size: 40px;
-
+color: white;
 }
-.aalign{
 
-
+#typed {
+    left: 0;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 60%;
+    width: 100%;
 }
+.valign-wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.valign-wrapper .valign {
+  display: block;
+}
+
 
 </style>
 </head>
 
 <body>
+
+  <!-- Begin Navbar -->
+
+          <!--      <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+
+          <!--        <div class="container">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+
+        <!--            <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <img src="images/logo.png" class="right hide-on-med-and-down" style="margin-left: -60px;">
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+
+          <!--          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul style="margin-right:10px;" class="right hide-on-med-and-down">
+                            <li><a style="color: black;" class="page-scroll" href="#Home">HOME</a></li>
+                            <li><a style="color: black;" class="page-scroll" href="#History">HISTORY</a></li>
+                            <li><a style="color: black;" class="page-scroll" href="#Games">GAMES</a></li>
+                            <li><a style="color: black;" class="page-scroll" href="#Contact">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </nav>
+
+
+            </header>
+
 <!--<style>
 .w3-myfont {
   font-family: "roboto", cursive, sans-serif;
@@ -95,8 +159,321 @@ font-size: 40px;
   <li class="w3-right"><a class="w3-hover-none w3-text-grey w3-hover-text-white" href="#">HISTORY</a></li>
  <li class="w3-right"><a class="w3-hover-none w3-text-grey w3-hover-text-white" href="#">HOME</a></li>
 </ul>
-</div>
+</div>-->
+<header class="clearfix">
+    <div class="container">
+            <div class="header-left">
+                <h1>TAG_SWAG</h1>
+            </div>
+            <div class="header-right">
+                <label for="open">
+                    <span class="hidden-desktop"></span>
+                </label>
+                <input type="checkbox" name="" id="open">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Inspiration</a>
+                    <a href="#">Articles</a>
+                    <a href="#">Works</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+<style>
+*{
+  margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    -webkit-box-sizing: border-box;
+}
+*:before,
+*:after{
+    -webkit-box-sizing: border-box;
+}
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    height: auto;
+    background: black;
+}
+.header-left,
+.header-right{
+    position: relative;
+    color: white;
+    float: left;
+}
+.header-left{
+    width: 30%;
+}
+.header-right label{
+    position: absolute;
+    top: -3.7em;
+    right: 0;
+    cursor: pointer;
+}
+.header-right span{
+    position: relative;
+    width: 2em;
+    height: 2em;
+    background: rgba(255,255,255,.3);
+    -webkit-transition: all .3s ease;
+}
+.header-right span:hover{
+    background: rgba(255,255,255,.6);
+}
+.header-right span:before,
+.header-right span:after{
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: .5em;
+    top: 4px;
+    left: 0;
+    background: black;
+}
+.header-right span:after{
+    top: 14px;
+}
+.header-right{
+    width: 70%;
+    text-align: right;
+}
+#open{
+    display: none;
+}
+h1{
+    font-weight: 300;
+    line-height: 40px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+nav>a{
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 40px;
+    padding: 0 2em;
+    -webkit-transition: all .3s ease;
+}
+nav>a:hover{
+    background: rgba(255,255,255,.9);
+    color: black;
+}
+.hidden-desktop{
+    display: none;
+}
+section{
+    width: 100%;
+    height: auto;
+  /*  background-image: -webkit-linear-gradient(#80059E 0%, #550486 100%);*/
+}
+.section-left,
+.section-right{
+    float: left;
+}
+.section-left{
+    width: 70%;
+    padding: 3em 0;
+}
+.section-right{
+    width: 30%;
+}
+.section-title,
+.section-tagline{
+    color: white;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all .4s ease;
+}
+.section-title{
+    font-size: 4em;
+    margin-bottom: .3em;
+    text-shadow: 0 3px 0px black,
+                 0 4px 0px rgba(150,150,150,.5);
+}
+.section-tagline{
+    font-size: 1em;
+}
+.learn-more{
+    display: table;
+    margin: 3em auto 0;
+    padding: 1em 6em;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,.8);
+    background: #EAAF00;
+   background-image: -webkit-linear-gradient(#EAAF00 0%, #D78100 100%);
+    font-size: 1.2em;
+}
+.learn-more:hover{
+    background: #EAAF00;
+}
+.learn-more:active{
+    box-shadow: inset 0 2px 0 rgba(0,0,0,.8);
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .box{
+        width: 49%;
+        margin-bottom: 5%;
+    }
+
+    ul li:nth-child(3) .box{
+        clear: both;
+    }
+
+    ul li:nth-child(2n) .box{
+        margin-right: 0;
+        clear: right;
+    }
+}
+
+/* Small monitor */
+@media (max-width: 979px){
+    nav>a{
+        padding: 0 1.5em;
+    }
+    .section-left,
+    .section-right{
+        width: 100%;
+    }
+    .section-left{
+        text-align: center;
+    }
+    .section-right{
+        padding: 0 0 2em;
+    }
+    .section-title{
+        font-size: 4em;
+        margin-bottom: .2em;
+    }
+    .section-tagline{
+        font-size: 1.3em;
+    }
+    .learn-more{
+        margin: 0 auto;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .container{
+        width: 95%;
+    }
+    nav>a{
+        padding: 0 2em;
+    }
+    h1{
+        padding: .5em 0;
+    }
+    .header-left,
+    .header-right{
+        width: 100%;
+        text-align: center;
+    }
+    .section-left,
+    .section-right{
+        width: 100%;
+    }
+    .section-left{
+        text-align: center;
+        padding: 2em 0;
+    }
+    .section-right{
+        padding: 1em 0 2em;
+    }
+    .section-title{
+        font-size: 3em;
+        margin-bottom: .2em;
+    }
+    .section-tagline{
+        font-size: 1.3em;
+    }
+    .learn-more{
+        margin: 0 auto;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    body{
+        padding: 0 .5em;
+    }
+    .container{
+        width: 90%;
+    }
+    nav{
+        height: 0;
+        overflow: hidden;
+        -webkit-transition: all .3s ease;
+    }
+    input[type="checkbox"]:checked + nav{
+        height: 205px;
+    }
+    nav>a{
+        padding: 0 1em;
+        display: block;
+        border-bottom: solid 1px rgba(255,255,255,.1);
+    }
+    h1{
+        padding: .5em 0;
+    }
+    .header-left,
+    .header-right{
+        width: 100%;
+        text-align: center;
+    }
+    .section-left,
+    .section-right{
+        width: 100%;
+    }
+    .section-left{
+        text-align: center;
+        padding: 1em 0;
+    }
+    .section-right{
+        text-align: center;
+        padding: 1em 0 2em;
+    }
+    .section-title{
+        font-size: 2.4em;
+        margin-bottom: 0;
+    }
+    .section-tagline{
+        font-size: 1em;
+    }
+    .learn-more{
+        display: table;
+        margin: 0 auto;
+    }
+    .hidden-desktop{
+        display: block;
+    }
+}
+</style>
       <!--BEGIN HEADER-->
 
 
@@ -120,44 +497,28 @@ font-size: 40px;
     </div>
 
 
-<div>
+<section class="center-align;" style="height: 100%;">
 
-  <div id="particles-js" style="background-color:#212121;">
+  <div id="particles-js">
 <canvas class="particles-js-canvas-el" width="360" height="640" style="width: 100%; height: 100%;"></canvas>
-<div class="align">
+  </div>
+ <div class="container valign" style="z-index: 99;">
+        <h4 id="typed" class="header light center white-text"><span class="typed-in"></span></h4>
+      <br><br>
+    </div>
+
+<div style="vertical-align:middle,text-align:center;">
 <p><span class="element align"></span></p>
-</div>
 </div>
 
   <!-- scripts -->
     <script src="js/particles.js"></script>
     <script src="js/app.js"></script>
 
-    <!-- stats.js -->
-    <script src="js/stats.js"></script>
-    <script>
-      var count_particles, stats, update;
-      stats = new Stats;
-      stats.setMode(0);
-      stats.domElement.style.position = 'absolute';
-      stats.domElement.style.left = '0px';
-      stats.domElement.style.top = '0px';
-      document.body.appendChild(stats.domElement);
-      count_particles = document.querySelector('.js-count-particles');
-      update = function() {
-        stats.begin();
-        stats.end();
-        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-          count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-        }
-        requestAnimationFrame(update);
-      };
-      requestAnimationFrame(update);
-    </script>
 
-</div>
+</section>
 
-
+<section id="History" style="font:normal 80% Arial, Helvetica, sans-serif;background-color: #212121; height: 100%;">
 <div class="container" >
   <header class="clearfix">
   </header>
@@ -202,16 +563,16 @@ font-size: 40px;
     </ul>
   </div>
 </div>
+</section>
 
-
-<div id="rs" class="w3-content w3-section hoverable" style="max-width:90%">
+<section id="Games">
+<div class="w3-content w3-section hoverable" style="max-width:80%; height: 100%;">
   <img class="mySlides" src="images/fifa.jpg" style="width:100%;">
   <img class="mySlides" src="images/dota.jpg" style="width:100%;">
   <img class="mySlides" src="images/csgo.jpg" style="width:100%;">
   <img class="mySlides" src="images/nfs.jpg" style="width:100%;">
   <img class="mySlides" src="images/cod.jpg" style="width:100%;">
 </div>
-
 <script>
 var myIndex = 0;
 carousel();
@@ -228,7 +589,8 @@ function carousel() {
     setTimeout(carousel, 3500); // Change image every 2 seconds
 }
 </script>
-
+</section>
+<section style="height:100%">
 <ul class="collapsible popout" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">FIFA 16</div>
@@ -251,7 +613,7 @@ function carousel() {
       <div class="collapsible-body"><p>4s5cdiotrdcybugintyugb</p></div>
     </li>
   </ul>
-
+</section>
 
 
 
@@ -346,16 +708,6 @@ function carousel() {
   </script>
 
   <script type="text/javascript">
-  $('#Patientpointer').on('click', function() {
-  	$.smoothScroll({
-  		scrollElement: $('body'),
-  		scrollTarget: '#Admit'
-  	});
-  	return false;
-  });
-  </script>
-
-  <script type="text/javascript">
   $('#Gamepointer').on('click', function() {
   	$.smoothScroll({
   		scrollElement: $('body'),
@@ -388,17 +740,33 @@ function carousel() {
         <script src="inc/jquery.counterup.min.js"></script>
         <script src="inc/smoothscroll.js"></script>
         <script src="js/jquery-3.1.0.min.js"></script>
-        <script src="js/typed.js"></script>
+
+       <script src="js/typed.js"></script>
         <script>
           $(function(){
               $(".element").typed({
-                strings: ["WHERE GAMING BECOMES RELIGION", "FIFA 16.", "DOTA 2.", "COD 4.", "CS:GO.", "NFS MW","23RD-25TH SEPTEMBER 2016"],
+                strings: ["WHERE GAMING BECOMES RELIGION!", "FIFA 16.", "DOTA 2.", "COD 4.", "CS:GO.", "NFS MW","23RD-25TH SEPTEMBER 2016"],
                 typeSpeed: 0,
                 backDelay: 1000,
                 loop:true
               });
           });
         </script>
+
+<!--
+        <script src="js/typed.min.js"></script>
+  <script src="js/init.js"></script>
+<script>
+    $(function(){
+        $(".typed-in").typed({
+            strings: ["", " ^1000 Programmer, ^1000 Developer, ^1000 Music Lover ^2000 and a world class Sloth. ^1000 :P"],
+            typeSpeed: 0,
+          backDelay: 1000,
+          loop: true
+        });
+    });
+</script>
+-->
 
         <!-- Theme JS -->
         <script src="js/theme.js"></script>
