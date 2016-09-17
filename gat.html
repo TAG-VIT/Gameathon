@@ -12,11 +12,6 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
-        <!--GetMDL Links-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
-        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-
         <!--Initialising css folders-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="button.css">
@@ -112,56 +107,112 @@ color: white;
 
 
 </style>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+  $(function() {
+    var pull 		= $('#pull');
+      menu 		= $('nav ul');
+      menuHeight	= menu.height();
+
+    $(pull).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle();
+    });
+
+    $(window).resize(function(){
+          var w = $(window).width();
+          if(w > 320 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+          }
+      });
+  });
+</script>
 </head>
 
 <body>
 
-  <!-- Uses a transparent header that draws on top of the layout's background -->
-<style>
-.demo-layout-transparent {
-background: url('../assets/demos/transparent.jpg') center / cover;
-}
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-/* This background is dark, so we set text to white. Use 87% black instead if
-   your background is light. */
-color: white;
-}
-</style>
+  <!-- Return to Top -->
+  <a href="javascript:" id="return-to-top"><i class="zmdi zmdi-triangle-up zmdi-hc-5x"></i></a>
 
-<section id="Home">
-<div class="demo-layout-transparent mdl-layout mdl-js-layout">
-<header class="mdl-layout__header mdl-layout__header--transparent">
-  <div class="mdl-layout__header-row">
-    <!-- Title -->
-    <span class="mdl-layout-title"><img src="images/taglogo.png" style="width: 110px; height: 50px;"></span>
-    <!-- Add spacer, to align navigation to the right -->
-    <div class="mdl-layout-spacer"></div>
-    <!-- Navigation -->
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="#History">HISTORY</a>
-      <a class="mdl-navigation__link" href="#Games">GAMES</a>
-      <a class="mdl-navigation__link" href="#Contact">CONTACT US</a>
-    </nav>
-  </div>
-</header>
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title"><img src="images/logo.png" style="width: 110px; height: 50px;"></span>
-  <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="#History">HISTORY</a>
-    <a class="mdl-navigation__link" href="#Games">GAMES</a>
-    <a class="mdl-navigation__link" href="#Contact">CONTACT US</a>
+  <style>
+  #return-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff;
+      background: #fff;
+      width: 50px;
+      height: 50px;
+      display: block;
+      text-decoration: none;
+      -webkit-border-radius: 35px;
+      -moz-border-radius: 35px;
+      border-radius: 35px;
+      display: none;
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+  #return-to-top i {
+      color: #000;
+      margin: 0;
+      position: relative;
+      left: 16px;
+      top: 13px;
+      font-size: 19px;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+  #return-to-top:hover {
+      background: #fff;
+  }
+  #return-to-top:hover i {
+      color: #fff;
+      top: 5px;
+  }
+  </style>
+
+  <script>
+  // ===== Scroll to Top ====
+  $(window).scroll(function() {
+      if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+          $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+          $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }
+  });
+  $('#return-to-top').click(function() {      // When arrow is clicked
+      $('body,html').animate({
+          scrollTop : 0                       // Scroll to top of body
+      }, 500);
+  });
+  </script>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><img src="images/taglogo.png" style="width:110px; height: 50px;margin-left:20px; padding-top: 8px;"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 10px;">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#History">HISTORY</a></li>
+        <li><a href="#Games">GAMES</a></li>
+        <li><a href="#Contact">CONTACT US</a></li>
+      </ul>
+    </div>
   </nav>
-</div>
-<main class="mdl-layout__content">
-</main>
-</div>
-</section>
 
-  <div class="no-pad-bot valign-wrapper" style="height: 100%;">
+  <div id="#" class="no-pad-bot valign-wrapper" style="height: 100%;">
 
-  <div id="particles-js" style="height: 100%">
-  <canvas class="particles-js-canvas-el" width="360" height="640" style="width: 100%; height: 100%;"></canvas>
+    <div id="particles-js" style="height: 100%">
+      <div style="margin-right: 20px;">
+      <a class="blinking right blink" href="http://www.vitgravitas.com/#/register" onclick="link()" target="_blank">REGISTER FOR GAMEATHON</a>
+    </div>
+    <canvas class="particles-js-canvas-el" width="360" height="640" style="width: 100%; height: 100%;"></canvas>
 
    <div class="container valign" style="z-index: 99;">
           <h4 id="typed" class="header light center white-text"><span class="typed-in"></span></h4>
@@ -169,9 +220,20 @@ color: white;
       </div>
         </div>
 
-  <!-- scripts -->
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
+        <!-- scripts -->
+          <script src="js/particles.js"></script>
+          <script src="js/app.js"></script>
+          <script>
+          function blinker() {
+            $('.blinking').fadeOut(500);
+            $('.blinking').fadeIn(500);
+          }
+          setInterval(blinker, 1000);
+
+          function link(){
+             window.open('http://www.vitgravitas.com/#/register','_blank');
+          }
+          </script>
   </div>
 
   <style>
@@ -192,6 +254,26 @@ color: white;
       font-size: 18px;
       font-family: Roboto;
       color: #ffffff;
+    }
+  }
+
+  .blink{
+    font-size: 30px;
+    font-family: Roboto;
+    color: #ff0000;
+  }
+  @media only screen and (max-width: 768px) {
+    .blink{
+      font-size: 25px;
+      font-family: Roboto;
+      color: #ff0000;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .blink{
+      font-size: 15px;
+      font-family: Roboto;
+      color: #ff0000;
     }
   }
 
@@ -250,7 +332,7 @@ color: white;
 
 <section id="Rules">
 <div class="wrap">
-<a class="link button yellow">RULES</a>
+<a class="link button yellow">RULES FOR Game-A-Thon</a>
 <script  type="text/javascript">
      $("a.link").on("click",function(){
          window.open('https://drive.google.com/drive/folders/0B0iLW4jXZZ1BNXc3TUFsMFNCdWM','_blank');
@@ -304,64 +386,59 @@ function carousel() {
 
 <!-- Begin contact section -->
 
-<section id="Contact" class="white-text" style="background-image: url('images/bck.jpg');">
+<section id="Contact" class="white-text" style="background-image: url('images/location 100.jpg');">
 
       <div class="page-header-wrapper">
       <br>
            <div class="container">
-                 <h1 style="font-size:35px;" class="header center">CONTACT US</h1>
+                 <h1 style="font-size:40px;" class="header center">CONTACT US</h1>
            </div>
       </div>
 
 
      <div class="container">
-         <div class="row">
-
-
+       <div class="row">
                  <div class="contact-info">
-                     <h4>Our Address</h4>
                      <ul class="contact-address">
+                       <div class="col s12 m4 l4">
                          <li> <i class="material-icons">location_on</i>
-                           &nbsp;Technology and Gaming Club,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VIT University,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vellore, TN, 632014<br></li>
-                         <li><i class="material-icons prefix">phone</i>&nbsp; +91 - 9944411446<br></li>
-                         <li><i class="material-icons prefix">email</i> tagclub.vitu@gmail.com</li>
-
-               </ul>
-
-
-               </div>
-
-
-                               <div class="contact-form">
-                                   <h2><b>Write to us</b></h2>
-                                   <form action="https://formspree.io/tagclub.vitu@gmail.com" method="POST">
-                                     <div class="form-group">
-                                         <input style="color: white; align: center; width: 60%" type="text" class="form-control input-lg" placeholder="Your Name" required>
-                                     </div>
-                                       <div class="form-group">
-                                           <input style="color: white; align: center; width: 60%" type="email" class="form-control input-lg" name="email" placeholder="E-mail" required>
-                                       </div>
-                                       <div class="form-group">
-                                           <input style="color: white; align: center; width: 60%" type="text" class="form-control input-lg" name="subject" placeholder="Subject" required>
-                                       </div>
-                                       <div class="form-group">
-                                           <textarea style="align: center; width: 60%" class="form-control input-lg" rows="5" name="message" placeholder="Message" required></textarea>
-                                       </div>
-                                       <br>
-                                       <button style="background-color: white; color: black" type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
-                                   </form>
-                               </div>
-
-
+                           &nbsp; Technology and Gaming Club, <br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;VIT University,<br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Vellore, TN <br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;632014</li>
+                         </div>
+                         <div class="col s12 m4 l4">
+                         <li><i class="material-icons prefix">phone</i>&nbsp; +91 - 9944411446</li>
                        </div>
-                   </div>
+                         <div class="col s12 m4 l4">
+                         <li><i class="material-icons prefix">email</i> &nbsp; tagclub.vitu@gmail.com</li>
+                       </div>
+               </ul>
+             </div>
+           </div>
+               <div class="contact-form">
+                   <form action="https://formspree.io/tagclub.vitu@gmail.com" method="POST">
+                     <div class="form-group">
+                         <input style="color: white; width: 60%" type="text" class="form-control input-lg" placeholder="Your Name" required>
+                     </div>
+                       <div class="form-group">
+                           <input style="color: white; width: 60%" type="email" class="form-control input-lg" name="email" placeholder="E-mail" required>
+                       </div>
+                       <div class="form-group">
+                           <input style="color: white; width: 60%" type="text" class="form-control input-lg" name="subject" placeholder="Subject" required>
+                       </div>
+                       <div class="form-group">
+                           <textarea style="width: 60%" class="form-control input-lg" rows="3" name="message" placeholder="Message" required></textarea>
+                       </div>
+                       <br>
+                       <button style="background-color: white; color: black" class="btn waves-effect waves-light" type="submit" name="action">Send</button>
+                   </form>
                </div>
 
-               <br><br>
+
+           </div>
+<br><br>
                <div style="text-align: center;">
                  <div style="display:inline-block; width: 50px;">
                  <a class="fb bt-icon icon-facebook"><i class="zmdi zmdi-facebook zmdi-hc-2x"></i></a>
-                 <script  type="text/javascript">
+                 <script type="text/javascript">
                       $("a.fb").on("click",function(){
                           window.open('https://www.facebook.com/tagvitu/?fref=ts','_blank');
                       });
@@ -369,7 +446,7 @@ function carousel() {
                </div>
                <div style="display:inline-block; width: 50px;">
                  <a class="twitter bt-icon icon-twitter"><i class="zmdi zmdi-twitter zmdi-hc-2x"></i></a>
-                 <script  type="text/javascript">
+                 <script type="text/javascript">
                       $("a.twitter").on("click",function(){
                           window.open('https://twitter.com/TagVit','_blank');
                       });
@@ -377,7 +454,7 @@ function carousel() {
                </div>
                <div style="display:inline-block; width: 50px;">
                  <a class="gmaps bt-icon icon-gplus"><i class="zmdi zmdi-google-maps zmdi-hc-2x"></i></a>
-                 <script  type="text/javascript">
+                 <script type="text/javascript">
                       $("a.gmaps").on("click",function(){
                           window.open('https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.155938,15z/data=!4m2!3m1!1s0x0:0xfef222e5f36ecdeb?sa=X&ved=0ahUKEwjCw5b6sJPPAhWJNpQKHeTSC44Q_BIIdjAO','_blank');
                       });
@@ -385,7 +462,17 @@ function carousel() {
                </div>
                </div>
 <br>
+<footer class="page-footer" style="background-color: #eceff1">
+          <div class="container">
+
+          <div class="">
+            <div class="container center" style="color: black; padding-bottom: 20px;">
+             &copy Copyright Technology &amp; Gaming Club, VIT Vellore
+            </div>
+          </div>
+</footer>
            </section>
+
 
            <!-- End contact section -->
 
@@ -400,25 +487,6 @@ function carousel() {
             });
         </script>
 
-  <script type="text/javascript">
-  $('#Aboutpointer').on('click', function() {
-  	$.smoothScroll({
-  		scrollElement: $('body'),
-  		scrollTarget: '#About'
-  	});
-  	return false;
-  });
-  </script>
-
-  <script type="text/javascript">
-  $('#Prizepointer').on('click', function() {
-  	$.smoothScroll({
-  		scrollElement: $('body'),
-  		scrollTarget: '#Prizes'
-  	});
-  	return false;
-  });
-  </script>
 
   <script type="text/javascript">
   $('#Gamepointer').on('click', function() {
