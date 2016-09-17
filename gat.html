@@ -19,6 +19,7 @@
 
         <!--Initialising css folders-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="button.css">
         <link rel="stylesheet" type="text/css" href="typed.css">
         <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/materialize.min.css">
@@ -247,82 +248,14 @@ color: white;
 </div>
 </section>
 
+<section id="Rules">
 <div class="wrap">
-<a class="button yellow" onclick="window.location.href='https://drive.google.com/drive/folders/0B0iLW4jXZZ1BNXc3TUFsMFNCdWM'">RULES</a>
-<style>
-.wrap {
-  margin-top: 20px;
-  text-align: center;
-}
-.button {
-  display: inline-block;
-  margin: 0.3em;
-  padding: 1.2em 5em;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 3px;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  border: none;
-  font-size: 15px;
-  text-align: center;
-}
+<a class="link button yellow">RULES</a>
+<script  type="text/javascript">
+     $("a.link").on("click",function(){
+         window.open('https://drive.google.com/drive/folders/0B0iLW4jXZZ1BNXc3TUFsMFNCdWM','_blank');
+     });
 
-.button:hover {
-  box-shadow: 1px 6px 15px rgba(0,0,0,0.5);
-}
-.yellow {
-  background-color: #ffc107;
-  color: black;
-}.ripple {
-  position: absolute;
-  background: rgba(0,0,0,.25);
-  border-radius: 100%;
-  transform: scale(0.2);
-  opacity:0;
-  pointer-events: none;
-  -webkit-animation: ripple .75s ease-out;
-  -moz-animation: ripple .75s ease-out;
-  animation: ripple .75s ease-out;
-}
-
-@-webkit-keyframes ripple {
-  from {
-    opacity:1;
-  }
-  to {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes ripple {
-  from {
-    opacity:1;
-  }
-  to {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes ripple {
-  from {
-    opacity:1;
-  }
-  to {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-</style>
-<script>
 $('.button').mousedown(function (e) {
     var target = e.target;
     var rect = target.getBoundingClientRect();
@@ -340,6 +273,7 @@ $('.button').mousedown(function (e) {
 });
 </script>
 </div>
+</section>
 
 <section id="Games">
 <div class="w3-content w3-section hoverable" style="max-width:80%; height: 100%;">
@@ -375,7 +309,7 @@ function carousel() {
       <div class="page-header-wrapper">
       <br>
            <div class="container">
-                 <h1 class="header center">CONTACT US</h1>
+                 <h1 style="font-size:35px;" class="header center">CONTACT US</h1>
            </div>
       </div>
 
@@ -424,12 +358,33 @@ function carousel() {
                </div>
 
                <br><br>
-               <div style="margin-left: auto; margin-right: auto;">
-                 <a onclick="window.location.href='https://www.facebook.com/tagvitu/?fref=ts'" target="_blank" class="bt-icon icon-facebook"><i class="zmdi zmdi-facebook"></i></a>
-                 <a onclick="window.location.href='https://twitter.com/TagVit'" target="_blank" class="bt-icon icon-twitter"><i class="zmdi zmdi-twitter"></i></a>
-                 <a onclick="window.location.href='https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.155938,15z/data=!4m2!3m1!1s0x0:0xfef222e5f36ecdeb?sa=X&ved=0ahUKEwjCw5b6sJPPAhWJNpQKHeTSC44Q_BIIdjAO'" target="_blank" class="bt-icon icon-gplus"><i class="zmdi zmdi-google-maps"></i></a>
+               <div style="text-align: center;">
+                 <div style="display:inline-block; width: 50px;">
+                 <a class="fb bt-icon icon-facebook"><i class="zmdi zmdi-facebook zmdi-hc-2x"></i></a>
+                 <script  type="text/javascript">
+                      $("a.fb").on("click",function(){
+                          window.open('https://www.facebook.com/tagvitu/?fref=ts','_blank');
+                      });
+                 </script>
                </div>
-
+               <div style="display:inline-block; width: 50px;">
+                 <a class="twitter bt-icon icon-twitter"><i class="zmdi zmdi-twitter zmdi-hc-2x"></i></a>
+                 <script  type="text/javascript">
+                      $("a.twitter").on("click",function(){
+                          window.open('https://twitter.com/TagVit','_blank');
+                      });
+                 </script>
+               </div>
+               <div style="display:inline-block; width: 50px;">
+                 <a class="gmaps bt-icon icon-gplus"><i class="zmdi zmdi-google-maps zmdi-hc-2x"></i></a>
+                 <script  type="text/javascript">
+                      $("a.gmaps").on("click",function(){
+                          window.open('https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.155938,15z/data=!4m2!3m1!1s0x0:0xfef222e5f36ecdeb?sa=X&ved=0ahUKEwjCw5b6sJPPAhWJNpQKHeTSC44Q_BIIdjAO','_blank');
+                      });
+                 </script>
+               </div>
+               </div>
+<br>
            </section>
 
            <!-- End contact section -->
