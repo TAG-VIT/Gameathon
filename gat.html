@@ -12,7 +12,13 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
+        <!--GetMDL Links-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
         <!--Initialising css folders-->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="typed.css">
         <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/materialize.min.css">
@@ -109,30 +115,47 @@ color: white;
 
 <body>
 
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
-          </ul>
-        </div>
+  <!-- Uses a transparent header that draws on top of the layout's background -->
+<style>
+.demo-layout-transparent {
+background: url('../assets/demos/transparent.jpg') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+/* This background is dark, so we set text to white. Use 87% black instead if
+   your background is light. */
+color: white;
+}
+</style>
 
-        <script>
-        $(document).ready(function(){
-          $(".button-collapse").sideNav();
-        });
-        </script>
-      </nav>
+<section id="Home">
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+<header class="mdl-layout__header mdl-layout__header--transparent">
+  <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title"><img src="images/taglogo.png" style="width: 110px; height: 50px;"></span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    <!-- Navigation -->
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#History">HISTORY</a>
+      <a class="mdl-navigation__link" href="#Games">GAMES</a>
+      <a class="mdl-navigation__link" href="#Contact">CONTACT US</a>
+    </nav>
+  </div>
+</header>
+<div class="mdl-layout__drawer">
+  <span class="mdl-layout-title"><img src="images/logo.png" style="width: 110px; height: 50px;"></span>
+  <nav class="mdl-navigation">
+    <a class="mdl-navigation__link" href="#History">HISTORY</a>
+    <a class="mdl-navigation__link" href="#Games">GAMES</a>
+    <a class="mdl-navigation__link" href="#Contact">CONTACT US</a>
+  </nav>
+</div>
+<main class="mdl-layout__content">
+</main>
+</div>
+</section>
 
   <div class="no-pad-bot valign-wrapper" style="height: 100%;">
 
@@ -224,7 +247,99 @@ color: white;
 </div>
 </section>
 
+<div class="wrap">
+<a class="button yellow" onclick="window.location.href='https://drive.google.com/drive/folders/0B0iLW4jXZZ1BNXc3TUFsMFNCdWM'">RULES</a>
+<style>
+.wrap {
+  margin-top: 20px;
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  margin: 0.3em;
+  padding: 1.2em 5em;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  border: none;
+  font-size: 15px;
+  text-align: center;
+}
 
+.button:hover {
+  box-shadow: 1px 6px 15px rgba(0,0,0,0.5);
+}
+.yellow {
+  background-color: #ffc107;
+  color: black;
+}.ripple {
+  position: absolute;
+  background: rgba(0,0,0,.25);
+  border-radius: 100%;
+  transform: scale(0.2);
+  opacity:0;
+  pointer-events: none;
+  -webkit-animation: ripple .75s ease-out;
+  -moz-animation: ripple .75s ease-out;
+  animation: ripple .75s ease-out;
+}
+
+@-webkit-keyframes ripple {
+  from {
+    opacity:1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes ripple {
+  from {
+    opacity:1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  from {
+    opacity:1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+</style>
+<script>
+$('.button').mousedown(function (e) {
+    var target = e.target;
+    var rect = target.getBoundingClientRect();
+    var ripple = target.querySelector('.ripple');
+    $(ripple).remove();
+    ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.height = ripple.style.width = Math.max(rect.width, rect.height) + 'px';
+    target.appendChild(ripple);
+    var top = e.pageY - rect.top - ripple.offsetHeight / 2 -  document.body.scrollTop;
+    var left = e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft;
+    ripple.style.top = top + 'px';
+    ripple.style.left = left + 'px';
+    return false;
+});
+</script>
+</div>
 
 <section id="Games">
 <div class="w3-content w3-section hoverable" style="max-width:80%; height: 100%;">
@@ -279,11 +394,7 @@ function carousel() {
 
                </ul>
 
-               <div style="margin-left: auto; margin-right: auto;">
-                 <a onclick="window.location.href='https://www.facebook.com/tagvitu/?fref=ts'" target="_blank" class="bt-icon icon-facebook"><i class="zmdi zmdi-facebook"></i></a>
-                 <a onclick="window.location.href='https://twitter.com/TagVit'" target="_blank" class="bt-icon icon-twitter"><i class="zmdi zmdi-twitter"></i></a>
-                 <a onclick="window.location.href='https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.155938,15z/data=!4m2!3m1!1s0x0:0xfef222e5f36ecdeb?sa=X&ved=0ahUKEwjCw5b6sJPPAhWJNpQKHeTSC44Q_BIIdjAO'" target="_blank" class="bt-icon icon-gplus"><i class="zmdi zmdi-google-maps"></i></a>
-               </div>
+
                </div>
 
 
@@ -313,6 +424,11 @@ function carousel() {
                </div>
 
                <br><br>
+               <div style="margin-left: auto; margin-right: auto;">
+                 <a onclick="window.location.href='https://www.facebook.com/tagvitu/?fref=ts'" target="_blank" class="bt-icon icon-facebook"><i class="zmdi zmdi-facebook"></i></a>
+                 <a onclick="window.location.href='https://twitter.com/TagVit'" target="_blank" class="bt-icon icon-twitter"><i class="zmdi zmdi-twitter"></i></a>
+                 <a onclick="window.location.href='https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.155938,15z/data=!4m2!3m1!1s0x0:0xfef222e5f36ecdeb?sa=X&ved=0ahUKEwjCw5b6sJPPAhWJNpQKHeTSC44Q_BIIdjAO'" target="_blank" class="bt-icon icon-gplus"><i class="zmdi zmdi-google-maps"></i></a>
+               </div>
 
            </section>
 
