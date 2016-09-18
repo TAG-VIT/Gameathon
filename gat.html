@@ -13,6 +13,8 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
         <!--Initialising css folders-->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="button.css">
         <link rel="stylesheet" type="text/css" href="typed.css">
         <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/materialize.min.css">
@@ -24,9 +26,7 @@
         <script type="text/javascript" src="js/scroll.js"></script>
         <script src="js/materialize.min.1.js"></script>
         <script src="js/materialize.min.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
-        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
         <meta charset="UTF-8" />
@@ -105,83 +105,186 @@ color: white;
   display: block;
 }
 
+
 </style>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+  $(function() {
+    var pull 		= $('#pull');
+      menu 		= $('nav ul');
+      menuHeight	= menu.height();
+
+    $(pull).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle();
+    });
+
+    $(window).resize(function(){
+          var w = $(window).width();
+          if(w > 320 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+          }
+      });
+  });
+</script>
 </head>
 
 <body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
 
-  <!--Fixed button-->
-    <div class="fixed-action-btn" style="bottom: 14px;">
-      <a class="btn-floating btn-large" style="background-color: black;">
-        <i class="large material-icons">settings</i>
-      </a>
-      <ul>
-        <li>
-          <a href="https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.1537493,17z/data=!3m1!4b1!4m5!3m4!1s0x3bad479f0ccbe067:0xfef222e5f36ecdeb!8m2!3d12.969264!4d79.155938" target="_blank" data-position="left" class="modal-trigger blue z-depth-1 waves-effect waves-light tooltipped btn-floating" data-tooltip="Location">
-                                   <i class="black material-icons">location_on</i>
-                                   </a>
+<style>
+body {
+  overflow: hidden;
+}
 
-        </li>
-        <li><a class="btn-floating blue tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Edit Password" href="#editpwd"><i class="large material-icons">security</i></a></li>
-        <li><a class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Edit Profile" href="#editprofile"><i class="large material-icons">person</i></a></li>
+
+/* Preloader */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
+</style>
+
+<script>
+$(window).load(function() { // makes sure the whole site is loaded
+  $('#status').fadeOut(); // will first fade out the loading animation
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+  $('body').delay(350).css({
+    'overflow': 'visible'
+  });
+})
+</script>
+
+  <!-- Return to Top -->
+  <a href="javascript:" id="return-to-top"><i class="zmdi zmdi-triangle-up zmdi-hc-5x"></i></a>
+
+  <style>
+  #return-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff;
+      background: #fff;
+      width: 50px;
+      height: 50px;
+      display: block;
+      text-decoration: none;
+      -webkit-border-radius: 35px;
+      -moz-border-radius: 35px;
+      border-radius: 35px;
+      display: none;
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+  #return-to-top i {
+      color: #000;
+      margin: 0;
+      position: relative;
+      left: 16px;
+      top: 13px;
+      font-size: 19px;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+  #return-to-top:hover {
+      background: #fff;
+  }
+  #return-to-top:hover i {
+      color: #fff;
+      top: 5px;
+  }
+  </style>
+
+  <script>
+  // ===== Scroll to Top ====
+  $(window).scroll(function() {
+      if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+          $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+          $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }
+  });
+  $('#return-to-top').click(function() {      // When arrow is clicked
+      $('body,html').animate({
+          scrollTop : 0                       // Scroll to top of body
+      }, 500);
+  });
+  </script>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><img src="images/taglogo.png" style="width:110px; height: 50px;margin-left:20px; padding-top: 8px;"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 10px;">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#History">HISTORY</a></li>
+        <li><a href="#Games">GAMES</a></li>
+        <li><a href="#Contact">CONTACT US</a></li>
       </ul>
     </div>
+  </nav>
 
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+  <div id="#" class="no-pad-bot valign-wrapper" style="height: 100%;">
 
-          </ul>
-
-        </div>
-
-        <script>
-        $(document).ready(function(){
-          $(".button-collapse").sideNav();
-        });
-        </script>
-      </nav>
-
-  <div class="no-pad-bot valign-wrapper" style="height: 100%;">
-
-  <div id="particles-js" style="height: 100%">
-    <a class="blinking right blink" href="tagclub.in" onclick="link()" target="_blank">REGISTER FOR GAMEATHON FAST</a>
-  <canvas class="particles-js-canvas-el" width="360" height="640" style="width: 100%; height: 100%;"></canvas>
+    <div id="particles-js" style="height: 100%">
+      <div style="margin-right: 20px;">
+      <a class="blinking right blink" href="http://www.vitgravitas.com/#/register" onclick="link()" target="_blank">REGISTER FOR GAMEATHON</a>
+    </div>
+    <canvas class="particles-js-canvas-el" width="360" height="640" style="width: 100%; height: 100%;"></canvas>
 
    <div class="container valign" style="z-index: 99;">
           <h4 id="typed" class="header light center white-text"><span class="typed-in"></span></h4>
         <br><br>
       </div>
+        </div>
 
-  </div>
+        <!-- scripts -->
+          <script src="js/particles.js"></script>
+          <script src="js/app.js"></script>
+          <script>
+          function blinker() {
+            $('.blinking').fadeOut(500);
+            $('.blinking').fadeIn(500);
+          }
+          setInterval(blinker, 1000);
 
-
-  <!-- scripts -->
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
-    <script>
-    function blinker() {
-      $('.blinking').fadeOut(500);
-      $('.blinking').fadeIn(500);
-    }
-    setInterval(blinker, 1000);
-
-    function link(){
-       window.location.href = "http://tagclub.in/";
-    }
-    </script>
+          function link(){
+             window.open('http://www.vitgravitas.com/#/register','_blank');
+          }
+          </script>
   </div>
 
   <style>
@@ -278,7 +381,32 @@ color: white;
 </div>
 </section>
 
+<section id="Rules">
+<div class="wrap">
+<a class="link button yellow">RULES FOR Game-A-Thon</a>
+<script  type="text/javascript">
+     $("a.link").on("click",function(){
+         window.open('https://drive.google.com/drive/folders/0B0iLW4jXZZ1BNXc3TUFsMFNCdWM','_blank');
+     });
 
+$('.button').mousedown(function (e) {
+    var target = e.target;
+    var rect = target.getBoundingClientRect();
+    var ripple = target.querySelector('.ripple');
+    $(ripple).remove();
+    ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.height = ripple.style.width = Math.max(rect.width, rect.height) + 'px';
+    target.appendChild(ripple);
+    var top = e.pageY - rect.top - ripple.offsetHeight / 2 -  document.body.scrollTop;
+    var left = e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft;
+    ripple.style.top = top + 'px';
+    ripple.style.left = left + 'px';
+    return false;
+});
+</script>
+</div>
+</section>
 
 <section id="Games">
 <div class="w3-content w3-section hoverable" style="max-width:80%; height: 100%;">
@@ -309,67 +437,93 @@ function carousel() {
 
 <!-- Begin contact section -->
 
-<section id="Contact" class="white-text" style="background-image: url('images/bck.jpg');">
+<section id="Contact" class="white-text" style="background-image: url('images/location 100.jpg');">
 
       <div class="page-header-wrapper">
       <br>
            <div class="container">
-                 <h1 class="header center">CONTACT US</h1>
+                 <h1 style="font-size:40px;" class="header center">CONTACT US</h1>
            </div>
       </div>
 
 
      <div class="container">
-         <div class="row">
-
-
+       <div class="row">
                  <div class="contact-info">
-                     <h4>Our Address</h4>
                      <ul class="contact-address">
+                       <div class="col s12 m4 l4">
                          <li> <i class="material-icons">location_on</i>
-                           &nbsp;Technology and Gaming Club,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VIT University,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vellore, TN, 632014<br></li>
-                         <li><i class="material-icons prefix">phone</i>&nbsp; +91 - 9944411446<br></li>
-                         <li><i class="material-icons prefix">email</i> tagclub.vitu@gmail.com</li>
-
-               </ul>
-
-               <div style="margin-left: auto; margin-right: auto;">
-                 <a onclick="window.location.href='https://www.facebook.com/tagvitu/?fref=ts'" target="_blank" class="bt-icon icon-facebook"><i class="zmdi zmdi-facebook"></i></a>
-                 <a href="https://twitter.com/TagVit" target="_blank" class="bt-icon icon-twitter"><i class="zmdi zmdi-twitter"></i></a>
-                 <a href="https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.155938,15z/data=!4m2!3m1!1s0x0:0xfef222e5f36ecdeb?sa=X&ved=0ahUKEwjCw5b6sJPPAhWJNpQKHeTSC44Q_BIIdjAO" target="_blank" class="bt-icon icon-gplus"><i class="zmdi zmdi-google-maps"></i></a>
-               </div>
-               </div>
-<a href="https://www.facebook.com/mypage" target="_blank" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
-<input type="button" value="Put Your Text Here" onclick="window.location.href='http://www.hyperlinkcode.com/button-links.php'" target="_blank">
-
-                               <div class="contact-form">
-                                   <h2><b>Write to us</b></h2>
-                                   <form action="https://formspree.io/tagclub.vitu@gmail.com" method="POST">
-                                     <div class="form-group">
-                                         <input style="color: white; align: center; width: 60%" type="text" class="form-control input-lg" placeholder="Your Name" required>
-                                     </div>
-                                       <div class="form-group">
-                                           <input style="color: white; align: center; width: 60%" type="email" class="form-control input-lg" name="email" placeholder="E-mail" required>
-                                       </div>
-                                       <div class="form-group">
-                                           <input style="color: white; align: center; width: 60%" type="text" class="form-control input-lg" name="subject" placeholder="Subject" required>
-                                       </div>
-                                       <div class="form-group">
-                                           <textarea style="align: center; width: 60%" class="form-control input-lg" rows="5" name="message" placeholder="Message" required></textarea>
-                                       </div>
-                                       <br>
-                                       <button style="background-color: white; color: black" type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
-                                   </form>
-                               </div>
-
-
+                           &nbsp; Technology and Gaming Club, <br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;VIT University,<br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Vellore, TN <br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;632014</li>
+                         </div>
+                         <div class="col s12 m4 l4">
+                         <li><i class="material-icons prefix">phone</i>&nbsp; +91 - 9944411446</li>
                        </div>
-                   </div>
+                         <div class="col s12 m4 l4">
+                         <li><i class="material-icons prefix">email</i> &nbsp; tagclub.vitu@gmail.com</li>
+                       </div>
+               </ul>
+             </div>
+           </div>
+               <div class="contact-form">
+                   <form action="https://formspree.io/tagclub.vitu@gmail.com" method="POST">
+                     <div class="form-group">
+                         <input style="color: white; width: 60%" type="text" class="form-control input-lg" placeholder="Your Name" required>
+                     </div>
+                       <div class="form-group">
+                           <input style="color: white; width: 60%" type="email" class="form-control input-lg" name="email" placeholder="E-mail" required>
+                       </div>
+                       <div class="form-group">
+                           <input style="color: white; width: 60%" type="text" class="form-control input-lg" name="subject" placeholder="Subject" required>
+                       </div>
+                       <div class="form-group">
+                           <textarea style="width: 60%" class="form-control input-lg" rows="3" name="message" placeholder="Message" required></textarea>
+                       </div>
+                       <br>
+                       <button style="background-color: white; color: black" class="btn waves-effect waves-light" type="submit" name="action">Send</button>
+                   </form>
                </div>
 
-               <br><br>
 
+           </div>
+<br><br>
+               <div style="text-align: center;">
+                 <div style="display:inline-block; width: 50px;">
+                 <a class="fb bt-icon icon-facebook"><i class="zmdi zmdi-facebook zmdi-hc-2x"></i></a>
+                 <script type="text/javascript">
+                      $("a.fb").on("click",function(){
+                          window.open('https://www.facebook.com/tagvitu/?fref=ts','_blank');
+                      });
+                 </script>
+               </div>
+               <div style="display:inline-block; width: 50px;">
+                 <a class="twitter bt-icon icon-twitter"><i class="zmdi zmdi-twitter zmdi-hc-2x"></i></a>
+                 <script type="text/javascript">
+                      $("a.twitter").on("click",function(){
+                          window.open('https://twitter.com/TagVit','_blank');
+                      });
+                 </script>
+               </div>
+               <div style="display:inline-block; width: 50px;">
+                 <a class="gmaps bt-icon icon-gplus"><i class="zmdi zmdi-google-maps zmdi-hc-2x"></i></a>
+                 <script type="text/javascript">
+                      $("a.gmaps").on("click",function(){
+                          window.open('https://www.google.co.in/maps/place/Vellore+Institute+of+Technology/@12.969264,79.155938,15z/data=!4m2!3m1!1s0x0:0xfef222e5f36ecdeb?sa=X&ved=0ahUKEwjCw5b6sJPPAhWJNpQKHeTSC44Q_BIIdjAO','_blank');
+                      });
+                 </script>
+               </div>
+               </div>
+<br>
+<footer class="page-footer" style="background-color: #eceff1">
+          <div class="container">
+
+          <div class="">
+            <div class="container center" style="color: black; padding-bottom: 20px;">
+             &copy Copyright Technology &amp; Gaming Club, VIT Vellore
+            </div>
+          </div>
+</footer>
            </section>
+
 
            <!-- End contact section -->
 
@@ -384,25 +538,6 @@ function carousel() {
             });
         </script>
 
-  <script type="text/javascript">
-  $('#Aboutpointer').on('click', function() {
-  	$.smoothScroll({
-  		scrollElement: $('body'),
-  		scrollTarget: '#About'
-  	});
-  	return false;
-  });
-  </script>
-
-  <script type="text/javascript">
-  $('#Prizepointer').on('click', function() {
-  	$.smoothScroll({
-  		scrollElement: $('body'),
-  		scrollTarget: '#Prizes'
-  	});
-  	return false;
-  });
-  </script>
 
   <script type="text/javascript">
   $('#Gamepointer').on('click', function() {
